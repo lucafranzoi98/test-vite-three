@@ -24,7 +24,7 @@ document.body.appendChild(renderer.domElement);
 
 const loader = new GLTFLoader();
 
-loader.load( 'src/assets/3d/Another_bedroom.glb', function ( gltf ) {
+loader.load( './src/assets/3d/Another_bedroom.glb', function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.rotation.y = -3;
@@ -50,14 +50,14 @@ camera.rotation.y = -0.5;
 
 
 
-//const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate() {
     requestAnimationFrame(animate);
 
     
 
-    //controls.update();
+    controls.update();
 
     renderer.render(scene, camera);
 }
